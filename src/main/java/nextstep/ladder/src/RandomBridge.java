@@ -2,7 +2,7 @@ package nextstep.ladder.src;
 
 import java.util.Random;
 
-public class MakeBridgeByRandom implements MakeBridge {
+public class RandomBridge implements MakeBridge {
   private static final int MAX_NUM = 2;
   private static final int STANDARD_NUM = 1;
 

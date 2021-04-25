@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
-import nextstep.ladder.src.MakeBridgeByRandom;
+import nextstep.ladder.src.RandomBridge;
 
 public class Floor {
   private final List<Bridge> floor;
@@ -27,7 +27,7 @@ public class Floor {
 
   public static Floor makeByWidht(int width) {
     List<Bridge> list = new ArrayList<>();
-    list.add(new Bridge(new MakeBridgeByRandom()));
+    list.add(new Bridge(new RandomBridge()));
     for(int i = 1; i < width; i++) {
       list.add(createBridge(list.get(i - 1)));
     }
@@ -38,7 +38,7 @@ public class Floor {
     if(lastBridge.isBridge()) {
       return new Bridge(false);
     }
-    return new Bridge(new MakeBridgeByRandom());
+    return new Bridge(new RandomBridge());
   }
 
   public List<Bridge> floor() {
