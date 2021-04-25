@@ -25,7 +25,7 @@ public class Floor {
     }
   }
 
-  public static Floor makeByWidht(int width) {
+  public static Floor makeByWidth(int width) {
     List<Bridge> list = new ArrayList<>();
     list.add(new Bridge(new RandomBridge()));
     for(int i = 1; i < width; i++) {

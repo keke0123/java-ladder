@@ -19,7 +19,7 @@ public class Ladder {
     return new Ladder(
       IntStream.range(0,  height)
       .boxed()
-      .map(i -> Floor.makeByWidht(width))
+      .map(i -> Floor.makeByWidth(width))
       .collect(Collectors.toList())
     );
   }

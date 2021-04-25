@@ -17,7 +17,7 @@ public class FloorTest {
   @CsvSource(value = {"3:3"}, delimiter = ':')
   @DisplayName("make by width floor, size check")
   public void construct(int width, int size) {
-    Floor floor = Floor.makeByWidht(width);
+    Floor floor = Floor.makeByWidth(width);
 
     assertThat(floor.floor().size()).isEqualTo(size);
   }
