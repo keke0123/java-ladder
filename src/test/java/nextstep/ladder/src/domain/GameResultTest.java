@@ -27,12 +27,12 @@ public class GameResultTest {
     assertThat(gameResult.list().size()).isEqualTo(numberOfResult);
   }
 
-  // @ParameterizedTest
-  // @CsvSource(value = {"tim,first,ted:5"}, delimiter = ':')
-  // @DisplayName("participants names max length")
-  // public void calcNamesMaxLength(String users, int max) {
-  //   int calcMax = Participants.makeByString(users).maxNameLength();
+  @ParameterizedTest
+  @CsvSource(value = {"꽝,test,10000:5"}, delimiter = ':')
+  @DisplayName("result names max length")
+  public void calcNamesMaxLength(String result, int max) {
+    int calcMax = Participants.makeByString(result).maxNameLength();
     
-  //   assertThat(calcMax).isEqualTo(max);
-  // }
+    assertThat(calcMax).isEqualTo(max);
+  }
 }

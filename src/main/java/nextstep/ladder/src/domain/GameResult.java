@@ -7,9 +7,9 @@ import java.util.stream.Collectors;
 public class GameResult {
   private static final String DELIMITER = ",";
 
-  private final List<String> gameResult;
+  private final List<Result> gameResult;
 
-  public GameResult(List<String> gameResult) {
+  public GameResult(List<Result> gameResult) {
     this.gameResult = gameResult;
   }
 
@@ -18,6 +18,7 @@ public class GameResult {
     return new GameResult(
       Arrays.stream(results.split(DELIMITER))
         .map(String::trim)
+        .map(Result::new)
         .collect(Collectors.toList())
     );
   }
@@ -27,7 +28,7 @@ public class GameResult {
     }
   }
 
-  public List<String> list() {
+  public List<Result> list() {
     return gameResult;
   }
 }
