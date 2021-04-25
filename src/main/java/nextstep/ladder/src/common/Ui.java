@@ -16,17 +16,17 @@ public class Ui {
 
   public Ui() {}
 
-  public static String bridgeUi(boolean isBridge) {
+  public static String makeBridgeUi(boolean isBridge) {
     if(isBridge) {
       return bridge;
     }
     return notBridge;
   }
 
-  public static String floorUi(Floor floor) {
+  public static String makeFloorUi(Floor floor) {
     String str = floor.floor()
       .stream()
-      .map(bridge -> bridgeUi(bridge.isBridge()))
+      .map(bridge -> makeBridgeUi(bridge.isBridge()))
       .collect(Collectors.joining("|"));
     return "|" + str + "|";
   }
@@ -34,7 +34,7 @@ public class Ui {
   public static String ladderUi(Ladder ladder) {
     return ladder.ladder()
       .stream()
-      .map(floor -> SPACE + floorUi(floor))
+      .map(floor -> SPACE + makeFloorUi(floor))
       .collect(Collectors.joining("\n"));
   }
 
