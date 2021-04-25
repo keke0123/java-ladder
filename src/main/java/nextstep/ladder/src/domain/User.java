@@ -1,6 +1,8 @@
 package nextstep.ladder.src.domain;
 
 public class User {
+  private static final int MAX_STRING_LENGTH = 5;
+
   private final String name;
 
   public User (String name) {
@@ -16,7 +18,7 @@ public class User {
   }
 
   private static void checkMaxLength(String name) {
-    if(name.length() > 5) {
+    if(name.length() > MAX_STRING_LENGTH) {
       throw new IllegalArgumentException("name 은 5 글자를 넘어갈 수 없습니다.");
     }
   }
