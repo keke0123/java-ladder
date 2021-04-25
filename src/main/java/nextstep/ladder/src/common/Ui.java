@@ -3,6 +3,7 @@ package nextstep.ladder.src.common;
 import java.util.stream.Collectors;
 
 import nextstep.ladder.src.domain.Floor;
+import nextstep.ladder.src.domain.GameResult;
 import nextstep.ladder.src.domain.Ladder;
 import nextstep.ladder.src.domain.Participants;
 
@@ -43,5 +44,12 @@ public class Ui {
       .map(user -> String.format("%" + STRING_SIZE + "s", user.name()))
       .collect(Collectors.joining(" "));
     return users;
+  }
+
+  public static String gameResultUi(GameResult gameResult) {
+    String results = gameResult.list().stream()
+      .map(result -> String.format("%" + STRING_SIZE + "s", result))
+      .collect(Collectors.joining(" "));
+    return results;
   }
 }
