@@ -9,7 +9,7 @@ import nextstep.ladder.src.domain.Participants;
 public class LadderController {
   public static void makeLadder() {
     Participants participants = Participants.makeByString(InputView.participants());
-    GameResult gameResult = GameResult.makeByString(InputView.gameResult());
+    GameResult gameResult = GameResult.makeByString(InputView.gameResult(), participants.numberOfParticipants());
     Ladder ladder = Ladder.makeLadderBySize(InputView.height(), participants.numberOfParticipants() - 1);
 
     System.out.println("실행결과");
