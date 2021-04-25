@@ -59,9 +59,9 @@
       - private final List<User> participants;
     - constructor
       - public Participants(List<User> participants);
-      - public static Participants makeByString(String str);
+      - public static Participants makeByString(String users);
     - method
-      - private static assureNotEmpty(String str);
+      - private static assureNotEmpty(String users);
       - public int numberOfParticipants();
       - public List<User> participants();
       - public int maxNameLength();
@@ -74,3 +74,12 @@
       - private static assureNotEmpty(String str);
       - private static checkMaxLength(String name);
       - public String name();
+  - ## GameResult.java
+    - field
+      - private final List<String> gameResult;
+    - constructor
+      - public GameResult(List<String> gameResult);
+      - public static GameResult makeByString(String str);
+    - method
+      - private static void assureNotEmpty(String results);
+      - public List<String> list();
