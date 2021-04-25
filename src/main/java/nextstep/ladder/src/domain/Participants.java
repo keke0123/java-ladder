@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Participants {
+  private static final String DELIMITER = ",";
 
   private final List<User> participants;
 
@@ -15,7 +16,7 @@ public class Participants {
   public static Participants makeByString(String users) {
     assureNotEmpty(users);
     return new Participants(
-      Arrays.stream(users.split(","))
+      Arrays.stream(users.split(DELIMITER))
         .map(String::trim)
         .map(User::new)
         .collect(Collectors.toList())
@@ -42,10 +43,10 @@ public class Participants {
       .reduce(0, (max, no) -> biggerNumber(max, no));
   }
 
-  private int biggerNumber(int numberA, int numberB) {
-    if(numberA > numberB) {
-      return numberA;
+  private int biggerNumber(int standardNumber, int targetNumber) {
+    if(standardNumber > targetNumber) {
+      return standardNumber;
     }
-    return numberB;
+    return targetNumber;
   }
 }
