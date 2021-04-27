@@ -20,18 +20,17 @@ public class Calculator {
     col = participantNumber;
     ladder.ladder().stream()
       .forEach((floor) -> {
-        if(col - 1 >= 0 && floor.floor().get(col - 1).isBridge()) {
-          col = col - 1;
-        } else if(col < floor.floor().size() && floor.floor().get(col).isBridge()) {
-          col = col + 1;
-        }
+        col = calculateCol(floor, col);
       });
-    // ladder.ladder().stream()
-    //   .reduce(0, (floor) -> {})
     return col;
   }
 
-  public int calc(int col, int row) {
-    return 0;
+  private int calculateCol(Floor floor, int col) {
+    if(col - 1 >= 0 && floor.floor().get(col - 1).isBridge()) {
+      return col - 1;
+    } else if (col < floor.floor().size() && floor.floor().get(col).isBridge()) {
+      return col + 1;
+    }
+    return col;
   }
 }
